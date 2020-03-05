@@ -11,5 +11,6 @@ const client = new ApolloClient({
     uri: 'http://localhost:4444/graphql'
 });
 
+// with the ApolloProvider wrapped around App. We can perform any query/mutation in any of our components
 ReactDOM.render(<ApolloProvider client={client}><App/></ApolloProvider>, document.getElementById('root'));
 
