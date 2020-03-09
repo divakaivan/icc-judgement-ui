@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {withRouter} from "react-router-dom";
 import {Mutation} from "react-apollo";
 import {signupUser} from "../../queries/queries";
 import LoadingSpinner from "../shared/LoadingSpinner";
@@ -11,7 +12,7 @@ const initalState = {
     passwordConfirmation: ''
 };
 
-const Signup = () => {
+const Signup = props => {
     const [userInput, setUserInput] = useState(
         {
             summonerName: '',
@@ -30,9 +31,11 @@ const Signup = () => {
 
     const handleSubmit = (event, signupUser) => {
         event.preventDefault();
-        signupUser().then(data => {
-            console.log(data);
-            clearState()
+        signupUser().then(async ({data}) => {
+            localStorage.setItem('token', data.signupUser.token);
+            await props.refetch();
+            clearState();
+            props.history.push('/')
         }).catch(error=>setError(error))
     };
 
@@ -64,4 +67,4 @@ const Signup = () => {
     )
 };
 
-export default Signup;
+export default withRouter(Signup);
