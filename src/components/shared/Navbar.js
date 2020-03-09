@@ -11,7 +11,7 @@ const NavBar = ({session}) => (
 );
 
 const NavbarUnAuth = () => (
-    <Nav className='mr-auhref'>
+    <Nav className='mr-auto'>
         <Nav.Link href='/'>Home</Nav.Link>
         <Nav.Link href='/cases'>Cases</Nav.Link>
         <Nav.Link href='/signin'>Sign in</Nav.Link>
