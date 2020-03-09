@@ -13,7 +13,7 @@ const NavBar = ({session}) => (
 const NavbarUnAuth = () => (
     <Nav className='mr-auhref'>
         <Nav.Link href='/'>Home</Nav.Link>
-        <Nav.Link href='/search'>Search</Nav.Link>
+        <Nav.Link href='/cases'>Cases</Nav.Link>
         <Nav.Link href='/signin'>Sign in</Nav.Link>
         <Nav.Link href='/signup'>Sign up</Nav.Link>
     </Nav>
@@ -22,7 +22,7 @@ const NavbarUnAuth = () => (
 const NavbarAuth = () => (
     <React.Fragment>
         <Nav.Link href='/'>Home</Nav.Link>
-        <Nav.Link href='/search'>Search</Nav.Link>
+        <Nav.Link href='/search'>Cases</Nav.Link>
         <Nav.Link href='/profile'>Profile</Nav.Link>
         <Signout/>
     </React.Fragment>
