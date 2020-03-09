@@ -5,11 +5,12 @@ import './index.css';
 import App from './components/App';
 import Signup from "./components/auth/Signup";
 import Signin from "./components/auth/Signin";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import ApolloClient from "apollo-boost";
 import {ApolloProvider} from "react-apollo";
 import withSession from "./components/shared/withSession";
-import Navbar from "./components/shared/Navbar";
+import NavBar from "./components/shared/Navbar";
 import Search from "./components/Cases/Search";
 import Profile from "./components/Profile/Profile";
 
@@ -41,9 +42,9 @@ const client = new ApolloClient({
 const Root = ({refetch, session}) => (
     <Router>
         <React.Fragment>
-            <Navbar session={session}/>
+            <NavBar session={session}/>
             <Switch>
-                <Route path="/" exact component={App} />
+                <Route path="/" exact render={() => <App session={session}/>} />
                 <Route path="/search" exact component={Search} />
                 <Route path='/profile' component={Profile}/>
                 <Route path="/signin" render={() => <Signin refetch={refetch}/>} />
