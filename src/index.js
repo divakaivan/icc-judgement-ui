@@ -11,7 +11,7 @@ import ApolloClient from "apollo-boost";
 import {ApolloProvider} from "react-apollo";
 import withSession from "./components/shared/withSession";
 import NavBar from "./components/shared/Navbar";
-import Search from "./components/Cases/Search";
+import Cases from "./components/Cases/Cases";
 import Profile from "./components/Profile/Profile";
 
 // this is essential for connecting our front and back
@@ -45,7 +45,7 @@ const Root = ({refetch, session}) => (
             <NavBar session={session}/>
             <Switch>
                 <Route path="/" exact render={() => <App session={session}/>} />
-                <Route path="/search" exact component={Search} />
+                <Route path="/cases" exact component={Cases} />
                 <Route path='/profile' component={Profile}/>
                 <Route path="/signin" render={() => <Signin refetch={refetch}/>} />
                 <Route path="/signup" render={() => <Signup refetch={refetch}/>} />
