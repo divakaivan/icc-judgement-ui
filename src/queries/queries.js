@@ -19,7 +19,15 @@ query {
 
 /* USER QUERIES */
 
-
+export const getCurrentUser = gql`
+query {
+    getCurrentUser {
+        summonerName
+        joinDate
+        email
+    }
+}
+`;
 
 /* USER MUTATIONS */
 export const signupUser = gql`
@@ -30,3 +38,10 @@ mutation($summonerName: String!, $email: String!, $password: String!) {
 }
 `;
 
+export const signinUser = gql`
+mutation($summonerName: String!, $password: String!) {
+  signinUser(summonerName: $summonerName, password: $password) {
+    token
+  }
+}
+`;
