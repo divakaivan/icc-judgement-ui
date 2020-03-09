@@ -1,4 +1,5 @@
 import React from "react";
+import {Button} from "react-bootstrap";
 
 import {withRouter} from "react-router-dom";
 import {ApolloConsumer} from "react-apollo";
@@ -15,7 +16,7 @@ const Signout = ({history}) => (
         {client => {
 
             return (
-                <button onClick={() => handleSignout(client, history)}>Sign out</button>
+                <Button variant="outline-primary" onClick={() => handleSignout(client, history)}>Sign out</Button>
             )
         }}
     </ApolloConsumer>

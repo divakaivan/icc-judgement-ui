@@ -1,43 +1,32 @@
 import React from "react";
-import {NavLink} from "react-router-dom";
 import Signout from "../auth/Signout";
+import {Navbar} from "react-bootstrap";
+import Nav from "react-bootstrap/Nav";
 
-const Navbar = ({session}) => (
-    <nav>
-        {session && session.getCurrentUser ? <NavbarAuth session={session}/> : <NavbarUnAuth/>}
-    </nav>
+const NavBar = ({session}) => (
+    <Navbar bg="dark" variant="dark">
+        <Navbar.Brand href='/'>Fields of Justice</Navbar.Brand>
+        {session && session.getCurrentUser ? <NavbarAuth/> : <NavbarUnAuth/>}
+    </Navbar>
 );
 
 const NavbarUnAuth = () => (
-    <ul>
-        <li>
-            <NavLink to='/' exact>Home</NavLink>
-        </li>
-        <li>
-            <NavLink to='/search'>Search</NavLink>
-        </li>
-        <li>
-            <NavLink to='/signin'>Sign in</NavLink>
-        </li>
-        <li>
-            <NavLink to='/signup'>Sign up</NavLink>
-        </li>
-    </ul>
+    <Nav className='mr-auhref'>
+        <Nav.Link href='/'>Home</Nav.Link>
+        <Nav.Link href='/search'>Search</Nav.Link>
+        <Nav.Link href='/signin'>Sign in</Nav.Link>
+        <Nav.Link href='/signup'>Sign up</Nav.Link>
+    </Nav>
 );
 
-const NavbarAuth = ({session}) => (
+const NavbarAuth = () => (
     <React.Fragment>
-        <ul>
-            <li><NavLink to='/' exact>Home</NavLink></li>
-            <li><NavLink to='/search'>Search</NavLink></li>
-            <li><NavLink to='/profile'>Profile</NavLink></li>
-            <li>
-                <Signout/>
-            </li>
-        </ul>
-        <h4>Welcome , <strong>{session.getCurrentUser.summonerName}</strong></h4>
+        <Nav.Link href='/'>Home</Nav.Link>
+        <Nav.Link href='/search'>Search</Nav.Link>
+        <Nav.Link href='/profile'>Profile</Nav.Link>
+        <Signout/>
     </React.Fragment>
 );
 
 
-export default Navbar;
+export default NavBar;
