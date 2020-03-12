@@ -1,0 +1,133 @@
+
+.sidebar {
+    position: fixed !important;
+    width: 240px !important;
+    left: -240px !important;
+    height: 100% !important;
+    background: #1e1e1e !important;
+    transition: all .5s ease !important;
+    z-index: 2 !important;
+}
+
+.sidebar header {
+    color: white !important;
+    font-size: 28px !important;
+    line-height: 70px !important;
+    text-align: center !important;
+    background: #1b1b1b !important;
+    user-select: none !important;
+    font-family: 'Consolas', sans-serif !important;
+}
+
+.nav-link1 {
+    display: block !important;
+    color: white !important;
+    height: 65px !important;
+    width: 100% !important;
+    line-height: 65px !important;
+    padding-left: 30px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .1) !important;
+    border-top: 1px solid black !important;
+    border-left: 5px solid transparent !important;
+    box-sizing: border-box !important;
+    font-family: 'Open Sans', sans-serif !important;
+    text-decoration: none !important;
+    transition: all .5s ease !important;
+}
+
+.nav-link1:hover, .nav-link1.active {
+    border-left: 5px solid #b93632 !important;
+    color: #b93632 !important;
+}
+
+.sidebar .nav-link1 i {
+    font-size: 23px !important;
+    margin-right: 16px !important;
+}
+
+.sidebar .nav-link1 span {
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+}
+
+#check {
+    display: none !important;
+}
+
+label #btn, label #cancel {
+    position: absolute !important;
+    cursor: pointer !important;
+    background: #262626 !important;
+    height: 45px !important;
+    width: 45px !important;
+    text-align: center !important;
+    line-height: 45px !important;
+    color: white !important;
+    font-size: 29px !important;
+    border-radius: 5px !important;
+    margin: 15px 30px !important;
+    border: 1px solid #262626 !important;
+    transition: all .5s ease !important;
+}
+
+label #cancel {
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+#check:checked ~ .sidebar{
+    left: 0 !important;
+}
+
+#check:checked ~ label #btn {
+    margin-left: 245px !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+#check:checked ~ label #cancel {
+    margin-left: 245px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+#check:checked ~ .sidebar {
+    left: 0 !important;
+}
+
+body {
+    z-index: 1;
+}
+
+@media (max-width: 860px) {
+    .sidebar {
+        height: auto;
+        width: 70px;
+        left: 0;
+        margin: 100px 0;
+    }
+    header, #btn, #cancel {
+        display: none;
+    }
+    span {
+        position: absolute;
+        margin-left: 23px;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .sidebar .nav-link1 i {
+        margin-left: -10px;
+
+    }
+    .nav-link1:hover {
+        width: 200px;
+        background: inherit;
+    }
+    .sidebar .nav-link1:hover span {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* Don't Forget to Subscribe our Channel[CodingNepal] */
