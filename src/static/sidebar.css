@@ -1,98 +1,98 @@
 
 .sidebar {
-    position: fixed !important;
-    width: 240px !important;
-    left: -240px !important;
-    height: 100% !important;
-    background: #1e1e1e !important;
-    transition: all .5s ease !important;
-    z-index: 2 !important;
+    position: fixed ;
+    width: 240px ;
+    left: -240px ;
+    height: 100% ;
+    background: #1e1e1e ;
+    transition: all .5s ease ;
+    z-index: 2 ;
 }
 
 .sidebar header {
-    color: white !important;
-    font-size: 28px !important;
-    line-height: 70px !important;
-    text-align: center !important;
-    background: #1b1b1b !important;
-    user-select: none !important;
-    font-family: 'Consolas', sans-serif !important;
+    color: white ;
+    font-size: 28px ;
+    line-height: 70px ;
+    text-align: center ;
+    background: #1b1b1b ;
+    user-select: none ;
+    font-family: 'Consolas', sans-serif ;
 }
 
 .nav-link1 {
-    display: block !important;
-    color: white !important;
-    height: 65px !important;
-    width: 100% !important;
-    line-height: 65px !important;
-    padding-left: 30px !important;
-    border-bottom: 1px solid rgba(255, 255, 255, .1) !important;
-    border-top: 1px solid black !important;
-    border-left: 5px solid transparent !important;
-    box-sizing: border-box !important;
-    font-family: 'Open Sans', sans-serif !important;
-    text-decoration: none !important;
-    transition: all .5s ease !important;
+    display: block ;
+    color: white ;
+    height: 65px ;
+    width: 100% ;
+    line-height: 65px ;
+    padding-left: 30px ;
+    border-bottom: 1px solid rgba(255, 255, 255, .1) ;
+    border-top: 1px solid black ;
+    border-left: 5px solid transparent ;
+    box-sizing: border-box ;
+    font-family: 'Open Sans', sans-serif ;
+    text-decoration: none ;
+    transition: all .5s ease ;
 }
 
 .nav-link1:hover, .nav-link1.active {
-    border-left: 5px solid #b93632 !important;
-    color: #b93632 !important;
+    border-left: 5px solid #b93632 ;
+    color: #b93632 ;
 }
 
 .sidebar .nav-link1 i {
-    font-size: 23px !important;
-    margin-right: 16px !important;
+    font-size: 23px ;
+    margin-right: 16px ;
 }
 
 .sidebar .nav-link1 span {
-    letter-spacing: 1px !important;
-    text-transform: uppercase !important;
+    letter-spacing: 1px ;
+    text-transform: uppercase ;
 }
 
 #check {
-    display: none !important;
+    display: none ;
 }
 
 label #btn, label #cancel {
-    position: absolute !important;
-    cursor: pointer !important;
-    background: #262626 !important;
-    height: 45px !important;
-    width: 45px !important;
-    text-align: center !important;
-    line-height: 45px !important;
-    color: white !important;
-    font-size: 29px !important;
-    border-radius: 5px !important;
-    margin: 15px 30px !important;
-    border: 1px solid #262626 !important;
-    transition: all .5s ease !important;
+    position: absolute ;
+    cursor: pointer ;
+    background: #262626 ;
+    height: 45px ;
+    width: 45px ;
+    text-align: center ;
+    line-height: 45px ;
+    color: white ;
+    font-size: 29px ;
+    border-radius: 5px ;
+    margin: 15px 30px ;
+    border: 1px solid #262626 ;
+    transition: all .5s ease ;
 }
 
 label #cancel {
-    opacity: 0 !important;
-    visibility: hidden !important;
+    opacity: 0 ;
+    visibility: hidden ;
 }
 
 #check:checked ~ .sidebar{
-    left: 0 !important;
+    left: 0 ;
 }
 
 #check:checked ~ label #btn {
-    margin-left: 245px !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
+    margin-left: 245px ;
+    opacity: 0 ;
+    visibility: hidden ;
 }
 
 #check:checked ~ label #cancel {
-    margin-left: 245px !important;
-    opacity: 1 !important;
-    visibility: visible !important;
+    margin-left: 245px ;
+    opacity: 1 ;
+    visibility: visible ;
 }
 
 #check:checked ~ .sidebar {
-    left: 0 !important;
+    left: 0 ;
 }
 
 body {
