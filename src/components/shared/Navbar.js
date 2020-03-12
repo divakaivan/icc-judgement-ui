@@ -2,10 +2,12 @@ import React from "react";
 import Signout from "../auth/Signout";
 import {Navbar} from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
+import Sidebar from "./Sidebar";
 
 const NavBar = ({session}) => (
     <Navbar bg="dark" variant="dark">
         <Navbar.Brand href='/'>Fields of Justice</Navbar.Brand>
+        <Sidebar/>
         {session && session.getCurrentUser ? <NavbarAuth/> : <NavbarUnAuth/>}
     </Navbar>
 );
