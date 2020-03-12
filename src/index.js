@@ -13,6 +13,7 @@ import withSession from "./components/shared/withSession";
 import NavBar from "./components/shared/Navbar";
 import Cases from "./components/Cases/Cases";
 import Profile from "./components/Profile/Profile";
+import Sidebar from "./components/shared/Sidebar";
 
 // this is essential for connecting our front and back
 const client = new ApolloClient({
@@ -41,17 +42,24 @@ const client = new ApolloClient({
 
 const Root = ({refetch, session}) => (
     <Router>
-        <React.Fragment>
-            <NavBar session={session}/>
-            <Switch>
-                <Route path="/" exact render={() => <App session={session}/>} />
-                <Route path="/cases" exact component={Cases} />
-                <Route path='/profile' component={Profile}/>
-                <Route path="/signin" render={() => <Signin refetch={refetch}/>} />
-                <Route path="/signup" render={() => <Signup refetch={refetch}/>} />
-                <Redirect to="/"/>
-            </Switch>
-        </React.Fragment>
+        {/*<NavBar session={session}/>*/}
+        <div style={{zIndex: 4}}>
+            <Sidebar/>
+        </div>
+        <div className="container">
+            <div className="row mt-5">
+                <div className="col-sm-12">
+                    <Switch>
+                        <Route path="/" exact render={() => <App session={session}/>}/>
+                        <Route path="/cases" exact component={Cases}/>
+                        <Route path='/profile' component={Profile}/>
+                        <Route path="/signin" render={() => <Signin refetch={refetch}/>}/>
+                        <Route path="/signup" render={() => <Signup refetch={refetch}/>}/>
+                        <Redirect to="/"/>
+                    </Switch>
+                </div>
+            </div>
+        </div>
     </Router>
 );
 
