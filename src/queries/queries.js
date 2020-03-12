@@ -4,6 +4,7 @@ import {gql} from "apollo-boost";
 export const getAllCases = gql`
 query {
     getAllCases {
+        _id
         image
         toxicVotes
         nonToxicVotes
